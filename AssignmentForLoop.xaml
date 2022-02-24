@@ -15,10 +15,10 @@ namespace appForLoopMessege
             InitializeComponent();
         }
 
-       public void butoon_Clicked(object sender, EventArgs e)
+      public void OnButtonClicked(object sender, EventArgs e)
          {
             for (int i = 1990; i < 2030; i++)
-            { label.Text += i.ToString() + Environment.NewLine;
+            { label2.Text += i.ToString() + Environment.NewLine;
              
             }
          }
