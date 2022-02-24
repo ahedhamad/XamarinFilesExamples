@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="Zaje2.MainPage">
+    <ContentPage.Content>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="200" />
+            </Grid.ColumnDefinitions>
+            <StackLayout BindingContext="{x:Static sys:DateTime.Now}" >
+                <Label Text="{Binding Date,StringFormat='{0:MM/dd/yyyy hh:mm tt}'}"
+               Grid.Row="0" Grid.Column="0"
+               TextColor="Black"
+               BackgroundColor="White"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <Label  Text= "Ahed Hamad"
+                 TextColor="Black"
+                 BackgroundColor="White"
+                 Grid.Row="0" Grid.Column="1" 
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"/>
+
+            <Button BackgroundColor="LightGoldenrodYellow"
+                Text="Zajel"
+                TextColor="Black"
+                 FontSize="Large"
+                 Grid.Row="1" Grid.Column="0" 
+                Clicked="Button_Clicked"/>
+
+            <Button Text="Google"
+               Grid.Row="1" Grid.Column="1"
+               TextColor="Black"
+               FontSize="Large"
+               BackgroundColor="LightGoldenrodYellow"
+               Clicked="Button_Clicked_1"
+              />
+            <StackLayout>
+                <ScrollView>
+                    <WebView x:Name="Browser" Source ="https://www.najah.edu/ar/"/>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
